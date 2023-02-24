@@ -1,0 +1,43 @@
+
+To compile:
+-----------
+gfortran -c constants.f90
+gfortran -c dusta.f90
+
+make -B -f makefile
+
+diskevolfast is the executable, type this to run simulation
+
+Inputs:
+------
+These are in the directory inputs, you should not have to modify anything here
+Main file is diskevol.inp, there are many extra files here, ignore them (do not delete any)
+
+Output:
+---------
+The output is in the folder models: [gets re-written each time code is executed]
+
+The file format is as follows
+
+nr 
+blank
+[array of quantity] 1200 for each radial point at t=t0
+blank
+[array of quantity] 1200 for each radial point at t=t1
+blank and so on
+
+Most files have this format, sigmadust has a column of 10 values corresponding to the grains sizes, each column is the sigma for that dust size. 
+
+time.info - contains the number of time steps
+time.dat  - contains the simulation times.
+rgrid.inp - radial grid (this is in ./input you may have to copy it over)
+
+Plots:
+------
+there are some python scripts, sigma_anim.py runs a time lapse of all the surface densities.
+Looking at that should give you some idea of file structure..
+
+
+
+
+

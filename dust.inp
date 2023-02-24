@@ -1,0 +1,8 @@
+1             ! Number of dust compositions
+3.2 	1.00  1500.0  ! material density,fraction,evap temp of each composition
+0.005      ! Minimum grain size of distribution in um; set min=max for const.
+10000.0     ! Maximum grain size of distribution in um; set min=max for const
+3.5           ! Power law exponent, usually MRN and 3.5
+0             ! Switch to check if dust tables have to be done, 1=yes,0-no
+
+	

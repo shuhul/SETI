@@ -1,0 +1,28 @@
+#define FRSIZE_R 1201
+#define NRDUST 2
+#define NDUSTBIN 10 
+#define FRSIZE_TEMP 200
+
+#define FRSIZE_Z    150
+#define FRSIZE_FREQ 210
+#define FRSIZE_MU   50
+#define DUST_SPECIES_MAX 1
+#define DUST_SIZE_MAX 1
+
+#define TSF_NTEMP 500
+
+#define INTALPBNU_NRTEMP 200
+#define INTALPBNU_TMIN 1.d-2
+#define INTALPBNU_TMAX 1.d4
+
+#define SOLVEDT_USE_TRAD 0
+#define TOTMEANKAPPA_NO_LIMITS
+
+#define TEMPACCUR 1.d-8
+#define NR_TEMPERATURE 500
+#define DUST_TEMP_MIN 1d-1
+#define DUST_TEMP_MAX 3d3
+
+#define MUMOLHYD 2.3
+#define CFLSAFE 0.5
+#define OPENACC access

@@ -1,0 +1,67 @@
+***
+From Leger et al. 1985, use a partial pressure criterion to determine
+where ices form: 
+***
+
+This is pure thermal desorption, and assumes photodesorption processes
+are unimportant. Since we are using this criterion to determine the change
+in gas/dust ratio in the midplane, this is a good assumption, extinction
+to UV photons is very high here. 
+
+Vapor pressure for water = 2.53e13 * exp(-6070/T) dynes/cm2
+Vapor pressure for CO = 7.714e11 * exp(-1030/T) dynes/cm2
+
+When the partial pressure for water/CO is greater than above vapor
+pressure at a given density,T) then ices form. We assume for simplicity
+that water/CO are either all vapor or all ice.
+
+First check if CO ices out:
+        P(CO) = n(CO) k_B T    (where T is the gas temperature)
+              = n_H X(CO) k_B T (where X(CO) is the CO abundance=1.4e-4, all
+                                  C is in CO in the midplane)
+      Therefore we have
+        n_H > 7.714e11*exp(-1030/T)/[X(CO) k_B T] or
+       
+       Log n_H > 31.6 - Log T -447.323/T ; if this is met we have CO ice
+
+Similarly for water ice:
+        Log n_H > 32.786 - Log T - 2636.17/T for X(H2O)=3e-4
+        If CO is also frozen then some O is locked up, and we need to 
+        subtract that amount (+0.273 to n_H criterion above), less water
+        as X(H2O)=1.6e-4 and higher densities are needed. 
+
+        
+This is shown in the figure snowline.png for both species. 
+
+*** Changing dust surface density to account for ices:
+
+I have not used the midplane density, but instead chose to use an average
+number density value over one scaleheight using the midplane temperature 
+and the gas surface density. I think this is more appropriate for what we
+are doing. 
+
+Since Sigma to some z = Sigma * Erf(z/sqrt(2)h), Sigma(h)=0.6827 Sigma
+<n> = <rhogas>/mH2 and <rhogas> = 0.6827*Sigma/[2*h],
+note 2h because both sides of disk. 
+ 
+if <n> meets above ice criterion, we have ices and now all the water
+and CO is distributed uniformly over entire size distribution,
+
+Each species has two surface density bins that we keep track off
+Sigma_ice and Sigma_vapor. Sigma_ice is a "dust" component and is 
+distributed into the many sigmadust bins, but this fraction is separately
+computed to determine the ice fraction in the dust. 
+
+If inside the snow line, the sigma_ice is locally released in to Sigma_vapor
+which advects just like the gas does. Note I do not add it to the gas, because
+locally (at snowlines) abundances can be high and I'm keeping track of this
+vapor too. 
+
+For these runs, I only considered water ice. I did not add CO ice, the
+mass added at that snowline is only marginally higher and I ignored it for now.
+
+
+
+ 
+
+
