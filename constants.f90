@@ -9,4 +9,6 @@ MODULE constants
   real(KIND=DP), parameter :: au=1.496d13    ! Astronomical unit [cm]
   real(KIND=DP), parameter :: solm=1.99d33   ! Solar mass [g]
   real(KIND=DP), parameter :: solr=6.99d10  ! Solar radius [cm]
+
+  ! parameters
 END MODULE constants
